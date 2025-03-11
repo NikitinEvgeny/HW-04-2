@@ -1,19 +1,4 @@
-<?php
-function removeMetaTags($html) {
-    $patterns = [
-        '/<title[^>]*>(.*?)<\/title>/i',    
-        '/<meta[^>]*name="keywords"[^>]*>/i',  
-        '/<meta[^>]*name="description"[^>]*>/i' 
-    ];
-    
-    foreach ($patterns as $pattern) {
-        $html = preg_replace($pattern, '', $html);
-    }
-    
-    return $html;
-};
 
-$htmlContent ='
 <html class="sb-init"><head>
 	<base href="/templates/modex/">
 	<meta charset="UTF-8">
@@ -454,8 +439,5 @@ $htmlContent ='
 <script src="assets/js/commerce.js"></script>
 <script src="assets/js/e-commerce_product.js"></script>
 <body></html> 
-';
 
-$cleanHtml = removeMetaTags($htmlContent);
-echo $cleanHtml;
-
+?>
